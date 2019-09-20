@@ -1,6 +1,6 @@
-if (localStorage.role !== 'PLAYER') {
-  window.location.href = ('./index.html');
-}
+// if (localStorage.role !== 'PLAYER') {
+//   window.location.href = ('./index.html');
+// }
 
 href = window.location.href;
 href = href.split('_').join(' ');
