@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FlightScanner - Show flights</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/layout.css" />
+  <link rel="stylesheet" type="text/css" href="./css/nav.css" />
+  <link rel="stylesheet" type="text/css" href="./css/player.css" />
+  <link rel="stylesheet" type="text/css" href="./css/loader.css" />
+
+  <!-- ^Date picker : https://github.com/Pikaday/Pikaday-->
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css" />
+  <!-- ^^Date picker : https://github.com/Pikaday/Pikaday -->
+</head>
+
+<body>
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" id='homeLink'>
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact us</a>
+          </li>
+          <li class="nav-item" id='profile' style="display:block;">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item" id='logout' style="display:none;">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <a class="navbar-brand" href="index.html">
+        <div class="foo">
+          <span class="letter" data-letter="F">F</span>
+          <span class="letter" data-letter="L">L</span>
+          <span class="letter" data-letter="I">I</span>
+          <span class="letter" data-letter="G">G</span>
+          <span class="letter" data-letter="H">H</span>
+          <span class="letter" data-letter="T">T</span>
+          <span class="letter"> </span>
+          <span>
+            <span class="letter" data-letter="S">S</span>
+            <span class="letter" data-letter="C">C</span>
+            <span class="letter" data-letter="A">A</span>
+            <span class="letter" data-letter="N">N</span>
+            <span class="letter" data-letter="N">N</span>
+            <span class="letter" data-letter="E">E</span>
+            <span class="letter" data-letter="R">R</span>
+          </span>
+        </div>
+      </a>
+    </nav>
+  </div>
+
+  <div class="page">
+    <div class="flightHeader container">
+      <h1> FlightScanner - Show flights</h1>
+
+      <button type="button" class="btn btn-info btn-block" id="showFlights"> Show flights! </button>
+      <button class="btn btn-red btn-primary-spacing" onclick="clearDetails()"> Clear </button>
+
+      <label class="radio-inline labelOrigDest"><input type="radio" name="optradio" id="radioDest" />Destination</label>
+      <label class="radio-inline labelOrigDest"><input type="radio" name="optradio" checked
+          id="radioOrig" />Origin</label>
+      <br>
+      <select id="selectCurrency">
+      </select>
+    </div>
+
+    <div class="origin container">
+      <h3>Origin</h3>
+
+      <label for="latitudeInputOrig">Latitude</label>
+      <input class="form-control" id="latitudeInputOrig" type="text" />
+
+      <label for="longitudeInputOrig">Longitude</label>
+      <input class="form-control" id="longitudeInputOrig" type="text" />
+
+      <label for="cityOrig">City</label>
+      <input class="form-control" id="cityOrig" type="text" />
+
+      <label for="datepickerDepart">Depart Date</label>
+      <input type="text" id="datepickerDepart" />
+
+    </div>
+
+    <div class="destination container">
+      <h3>Destination</h3>
+
+      <label for="latitudeInputDest">Latitude</label>
+      <input class="form-control" id="latitudeInputDest" type="text" />
+
+      <label for="longitudeInputDest">Longitude</label>
+      <input class="form-control" id="longitudeInputDest" type="text" />
+
+      <label for="cityDest">City</label>
+      <input class="form-control" id="cityDest" type="text" />
+
+      <label for="datepickerReturn">Return Date</label>
+
+      <input type="text" id="datepickerReturn" />
+
+    </div>
+
+  </div>
+
+
+  <div id="map"></div>
+  <div class="loader-wrapper" style="display:none;" id="loaderWrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="js/player.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzKn7BIx_ZamDs0RIRjqLJoOnl2mZHyl0&callback=initMap"
+    async defer></script>
+  <script src="js/nav.js"></script>
+
+
+</body>
+
+</html>

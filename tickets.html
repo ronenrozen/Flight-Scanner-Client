@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<title>FlightScanner - Flights list</title>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+<link rel="shortcut icon" type="image/x-icon" href="Images/icon.png" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/nav.css" />
+
+<link rel="stylesheet" type="text/css" href="./css/tickets.css" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+<body>
+
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" id='homeLink'>
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact us</a>
+          </li>
+          <li class="nav-item" id='profile' style="display:block;">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item" id='logout' style="display:none;">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <a class="navbar-brand" href="index.html">
+        <div class="foo">
+          <span class="letter" data-letter="F">F</span>
+          <span class="letter" data-letter="L">L</span>
+          <span class="letter" data-letter="I">I</span>
+          <span class="letter" data-letter="G">G</span>
+          <span class="letter" data-letter="H">H</span>
+          <span class="letter" data-letter="T">T</span>
+          <span class="letter"> </span>
+          <span>
+            <span class="letter" data-letter="S">S</span>
+            <span class="letter" data-letter="C">C</span>
+            <span class="letter" data-letter="A">A</span>
+            <span class="letter" data-letter="N">N</span>
+            <span class="letter" data-letter="N">N</span>
+            <span class="letter" data-letter="E">E</span>
+            <span class="letter" data-letter="R">R</span>
+          </span>
+        </div>
+      </a>
+    </nav>
+  </div>
+
+  <div class="alert alert-info container" id="msg" role="alert" style="display:none;">
+    Subscribed!
+  </div>
+  <div class="w3-container container" style="margin-top: 20px;">
+    <div class="container" style="margin-left:207px;">
+      <a href="/player.html" class="previous">Player Panel</a>
+      <button id="subscribeButton" class="btn btn-success btn-primary-spacing" onclick="subscribe()">
+        Subscribe
+      </button>
+    </div>
+  </div>
+
+  <script src="js/tickets.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+
+</html>

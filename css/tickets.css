@@ -1,0 +1,78 @@
+.ticketDetails {
+  margin-left: 320px;
+}
+
+.boldText {
+  font-weight: 700;
+}
+
+.connectiondBoldText {
+  font-weight: 700;
+  color: red;
+}
+
+
+.notBoldText {
+  font-weight: 300;
+}
+
+.depart {}
+
+.stopDiv {
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.returnFlight {
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.hrLine {
+  border: 2px solid black;
+
+}
+
+.reddd {
+  color: red;
+}
+
+.hrHeader {
+  border: 1px solid grey;
+
+}
+
+.stopFlight {
+  margin-left: 0px;
+  margin-top: 70px;
+}
+
+.ticketButton {
+  margin-bottom: 40px;
+}
+
+.card-wrapper {
+  width: 60%;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+
+.previous {
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4caf50;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}

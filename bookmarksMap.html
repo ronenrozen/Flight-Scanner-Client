@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA Compatible" content="ie=edge" />
+    <title>FlightScanner Map</title>
+    <style media="screen">
+      #map {
+        height: 750px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Map</h1>
+    <div id="map"></div>
+    <script type="text/javascript">
+      function initMap() {
+        //Map options
+        var options = {
+          zoom: 9, //the zoom of the map when the site is loaded
+          center: { lat: 32.0853, lng: 34.7818 } //tel aviv
+        };
+        var map = new google.maps.Map(document.getElementById("map"), options);
+
+        //listen for click on the map: any click will create a flag (marker).
+        google.maps.event.addListener(map, "click", function(event) {
+          addMarker({ coords: event.latLng });
+          console.log("\n lat is: " + event.latLng.lat());
+          console.log("\n lng is: " + event.latLng.lng());
+        });
+
+        // var markersArr = [
+        //   {
+        //     coords: { lat: 32.0853, lng: 34.7818 },
+        //     locationName: "Tel Aviv"
+        //   },
+        //   {
+        //     coords: { lat: 31.7683, lng: 35.2137 },
+        //     locationName: "Jerusalem"
+        //   }
+        // ];
+
+        // for (var i = 0; i < markersArr.length; i++) {
+        //   addMarker(markersArr[i]);
+        // }
+
+        function addMarker(props) {
+          var marker = new google.maps.Marker({
+            position: props.coords,
+            map: map //the map we created is the map we want
+            //icon:"" we can add another icons (instead of the flag, maybe it will be usable.)
+          });
+
+          // if (props.locationName) {
+          //   var infoWindow = new google.maps.InfoWindow({
+          //     content: `<h1>${props.locationName}</h1>`
+          //   });
+          // }
+
+          // marker.addListener("click", function() {
+          //   infoWindow.open(map, marker);
+          // });
+        }
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzKn7BIx_ZamDs0RIRjqLJoOnl2mZHyl0&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

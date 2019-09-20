@@ -1,0 +1,39 @@
+.users,
+.actions,
+.elments {
+    padding: 1em 0;
+    margin-top: 2em;
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.form {
+    /* width: 30rem; */
+    line-height: 1.6;
+}
+
+.section h1 {
+    text-align: center;
+}
+
+.section p {
+    text-align: center;
+    color: rgb(82, 82, 82);
+}
+
+label {
+    text-align: left;
+}
+
+.page {
+    display: flex;
+}
+.alert {
+    margin-top: 1em !important;
+}
+.pagination{
+    width: 5em;
+    display: inline;
+}
