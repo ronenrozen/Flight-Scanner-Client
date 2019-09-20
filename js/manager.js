@@ -1,6 +1,6 @@
-if (localStorage.role !== 'MANAGER') {
-  window.location.href = ('./index.html');
-}
+// if (localStorage.role !== 'MANAGER') {
+//   window.location.href = ('./index.html');
+// }
 
 
 const airportSubmit = document
