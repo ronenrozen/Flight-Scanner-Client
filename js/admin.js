@@ -1,6 +1,6 @@
-if (localStorage.role !== 'ADMIN') {
-  window.location.href = ('./index.html');
-}
+// if (localStorage.role !== 'ADMIN') {
+//   window.location.href = ('./index.html');
+// }
 
 
 
